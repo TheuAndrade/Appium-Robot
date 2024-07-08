@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-06-30T12:06:21.332180" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkbox" source="C:\QAx\projects\yodapp-robot\tests\checkbox.robot">
+<test id="s1-t1" name="Deve marcar as techs que usam Appium" line="7">
+<kw name="Starting Session" owner="base">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Android Emulator</arg>
+<arg>automationName=UIAutomator2</arg>
+<arg>app=${apkPath}</arg>
+<arg>udid=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2024-06-30T12:06:21.741250" elapsed="12.505587"/>
+</kw>
+<status status="PASS" start="2024-06-30T12:06:21.741250" elapsed="12.506591"/>
+</kw>
+<kw name="Go to main page" owner="base">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${startButton}</arg>
+<arg>10</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-06-30T12:06:34.248837" elapsed="5.423541"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:40.593033" level="INFO">xpath criteria: //*[contains(@text,"QAX")]</msg>
+<arg>${startButton}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2024-06-30T12:06:39.672378" elapsed="0.920655"/>
+</kw>
+<status status="PASS" start="2024-06-30T12:06:34.247841" elapsed="6.345192"/>
+</kw>
+<kw name="Navegate to" owner="base">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-30T12:06:40.595699" level="INFO">${hamburguerMenu} = xpath=//android.widget.ImageButton[@content-desc="Open navigation drawer"]</msg>
+<var>${hamburguerMenu}</var>
+<arg>xpath=//android.widget.ImageButton[@content-desc="Open navigation drawer"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-30T12:06:40.595699" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:41.953306" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Open navigation drawer"]
+xpath criteria: //android.widget.ImageButton[@content-desc="Open navigation drawer"]</msg>
+<arg>${hamburguerMenu}</arg>
+<arg>5</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:40.595699" elapsed="1.357607"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:41.955305" level="INFO">Clicking element 'xpath=//android.widget.ImageButton[@content-desc="Open navigation drawer"]'.</msg>
+<msg time="2024-06-30T12:06:42.129457" level="INFO">xpath criteria: //android.widget.ImageButton[@content-desc="Open navigation drawer"]</msg>
+<arg>${hamburguerMenu}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:41.953306" elapsed="0.176151"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-30T12:06:42.129457" level="INFO">${menu_item} = xpath=//android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text="Check e Radio"]</msg>
+<var>${menu_item}</var>
+<arg>xpath=//android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text="${item_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-30T12:06:42.129457" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:43.061025" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text="Check e Radio"]</msg>
+<arg>${menu_item}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:42.129457" elapsed="0.931568"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:43.063043" level="INFO">Clicking element 'xpath=//android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text="Check e Radio"]'.</msg>
+<msg time="2024-06-30T12:06:43.273421" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.qaxperience.yodapp:id/tvItemTitle" and @text="Check e Radio"]</msg>
+<arg>${menu_item}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:43.061025" elapsed="0.212396"/>
+</kw>
+<arg>Check e Radio</arg>
+<status status="PASS" start="2024-06-30T12:06:40.594188" elapsed="2.679233"/>
+</kw>
+<kw name="Go to item" owner="base">
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${item_text}</arg>
+<arg>5</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-06-30T12:06:43.275419" elapsed="0.943401"/>
+</kw>
+<kw name="Click Text" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:46.047580" level="INFO">xpath criteria: //*[contains(@text,"Checkbox")]</msg>
+<arg>${item_text}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" start="2024-06-30T12:06:44.218820" elapsed="1.828760"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="AppiumLibrary">
+<arg>${validation_value}</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" start="2024-06-30T12:06:46.048580" elapsed="0.072900"/>
+</kw>
+<arg>Checkbox</arg>
+<arg>Marque as techs que usam Appium</arg>
+<status status="PASS" start="2024-06-30T12:06:43.275419" elapsed="2.846061"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-06-30T12:06:46.122340" level="INFO">@{techs} = [ Java | Python | Ruby | Javascript | C# | Robot Framework ]</msg>
+<var>@{techs}</var>
+<arg>Java</arg>
+<arg>Python</arg>
+<arg>Ruby</arg>
+<arg>Javascript</arg>
+<arg>C#</arg>
+<arg>Robot Framework</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-06-30T12:06:46.122340" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Check box text equal" owner="base">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:46.226944" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Java "]</msg>
+<arg>${value}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:46.123335" elapsed="0.103609"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:46.230975" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Java "]'.</msg>
+<msg time="2024-06-30T12:06:46.405451" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Java "]</msg>
+<arg>${value}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:46.227948" elapsed="0.177503"/>
+</kw>
+<arg>xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="${tech} "]</arg>
+<status status="PASS" start="2024-06-30T12:06:46.123335" elapsed="0.282116"/>
+</kw>
+<var name="${tech}">Java</var>
+<status status="PASS" start="2024-06-30T12:06:46.123335" elapsed="0.282116"/>
+</iter>
+<iter>
+<kw name="Check box text equal" owner="base">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:47.372318" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Python "]</msg>
+<arg>${value}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:46.407490" elapsed="0.965830"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:47.375318" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Python "]'.</msg>
+<msg time="2024-06-30T12:06:47.554974" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Python "]</msg>
+<arg>${value}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:47.373320" elapsed="0.181654"/>
+</kw>
+<arg>xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="${tech} "]</arg>
+<status status="PASS" start="2024-06-30T12:06:46.406446" elapsed="1.148528"/>
+</kw>
+<var name="${tech}">Python</var>
+<status status="PASS" start="2024-06-30T12:06:46.405451" elapsed="1.149523"/>
+</iter>
+<iter>
+<kw name="Check box text equal" owner="base">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:48.482473" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Ruby "]</msg>
+<arg>${value}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:47.554974" elapsed="0.928879"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:48.485865" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Ruby "]'.</msg>
+<msg time="2024-06-30T12:06:48.674186" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Ruby "]</msg>
+<arg>${value}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:48.483853" elapsed="0.190333"/>
+</kw>
+<arg>xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="${tech} "]</arg>
+<status status="PASS" start="2024-06-30T12:06:47.554974" elapsed="1.119212"/>
+</kw>
+<var name="${tech}">Ruby</var>
+<status status="PASS" start="2024-06-30T12:06:47.554974" elapsed="1.119212"/>
+</iter>
+<iter>
+<kw name="Check box text equal" owner="base">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:49.674086" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Javascript "]</msg>
+<arg>${value}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:48.676189" elapsed="0.997897"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:49.676086" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Javascript "]'.</msg>
+<msg time="2024-06-30T12:06:49.827455" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Javascript "]</msg>
+<arg>${value}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:49.674086" elapsed="0.153369"/>
+</kw>
+<arg>xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="${tech} "]</arg>
+<status status="PASS" start="2024-06-30T12:06:48.676189" elapsed="1.151266"/>
+</kw>
+<var name="${tech}">Javascript</var>
+<status status="PASS" start="2024-06-30T12:06:48.676189" elapsed="1.151266"/>
+</iter>
+<iter>
+<kw name="Check box text equal" owner="base">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:50.788973" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="C# "]</msg>
+<arg>${value}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:49.828964" elapsed="0.960009"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:50.792036" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="C# "]'.</msg>
+<msg time="2024-06-30T12:06:50.988891" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="C# "]</msg>
+<arg>${value}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:50.788973" elapsed="0.199918"/>
+</kw>
+<arg>xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="${tech} "]</arg>
+<status status="PASS" start="2024-06-30T12:06:49.828453" elapsed="1.160438"/>
+</kw>
+<var name="${tech}">C#</var>
+<status status="PASS" start="2024-06-30T12:06:49.827455" elapsed="1.161436"/>
+</iter>
+<iter>
+<kw name="Check box text equal" owner="base">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:51.935943" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Robot Framework "]</msg>
+<arg>${value}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2024-06-30T12:06:50.989417" elapsed="0.946526"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2024-06-30T12:06:51.938916" level="INFO">Clicking element 'xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Robot Framework "]'.</msg>
+<msg time="2024-06-30T12:06:52.106073" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="Robot Framework "]</msg>
+<arg>${value}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2024-06-30T12:06:51.935943" elapsed="0.170130"/>
+</kw>
+<arg>xpath=//android.widget.CheckBox[@resource-id="com.qaxperience.yodapp:id/checkboxButton" and @text="${tech} "]</arg>
+<status status="PASS" start="2024-06-30T12:06:50.989417" elapsed="1.117657"/>
+</kw>
+<var name="${tech}">Robot Framework</var>
+<status status="PASS" start="2024-06-30T12:06:50.989417" elapsed="1.117657"/>
+</iter>
+<var>${tech}</var>
+<value>@{techs}</value>
+<status status="PASS" start="2024-06-30T12:06:46.122340" elapsed="5.984734"/>
+</for>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-06-30T12:06:57.108542" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-06-30T12:06:52.108075" elapsed="5.001040"/>
+</kw>
+<kw name="Close Session" owner="base">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2024-06-30T12:06:57.112093" elapsed="0.984843"/>
+</kw>
+<status status="PASS" start="2024-06-30T12:06:57.109696" elapsed="0.988238"/>
+</kw>
+<status status="PASS" start="2024-06-30T12:06:21.739747" elapsed="36.358187"/>
+</test>
+<status status="PASS" start="2024-06-30T12:06:21.334218" elapsed="36.765225"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Checkbox">Checkbox</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
